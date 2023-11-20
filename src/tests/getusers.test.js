@@ -4,7 +4,7 @@ const app = require("../App");
 
 /* Connecting to the database before each test. */
 beforeEach(async () => {
-    await mongoose.connect('mongodb+srv://Hadwa:hadwa1996@cluster0.hpstsct.mongodb.net/?retryWrites=true&w=majority');
+    await mongoose.connect('mongodb+srv://Hadwa:Hadwa@cluster0.hpstsct.mongodb.net/?retryWrites=true&w=majority');
   });
 
  /* Closing database connection after each test. */
