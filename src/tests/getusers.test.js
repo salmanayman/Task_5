@@ -16,10 +16,10 @@ beforeEach(async () => {
 describe("GET users/:id", () => {
     test("Get user by Id", (done) => {
       request(app)
-        .get("/users/63815f0fbed67df68d2ae197")
+        .get("/users/654b574dfe8cc5b5881fa37a")
         .expect(200)
         .expect((res) => {
-          res.body.name = "hadwa.pasha";
+         expect(res.body.name).toBe("Hadwa");
         })
         .end((err, res) => {
           if (err) return done(err);
