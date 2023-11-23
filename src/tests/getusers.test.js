@@ -30,6 +30,23 @@ describe("GET users/:id", () => {
 
 
 /* Test for creating a new user. */
-
-          
-
+describe("POST signup", () => {
+    test("Post user", (done) => {
+      request(app)
+        .post("/signup")
+        .send({
+          email: "test@gmail.com",
+          password: "1234",
+          name: "Salman"
+        })
+        .expect(200)
+        .expect((res) => {
+          expect(res.body.email).toBe("test@gmail.com")
+          expect(res.body.name).toBe("Salman")
+        })
+        .end((err, res) => {
+          if (err) return done(err);
+          return done();
+        });
+    })
+})
